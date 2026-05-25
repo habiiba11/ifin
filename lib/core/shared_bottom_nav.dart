@@ -12,7 +12,7 @@ class SharedBottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<LocaleProvider>(
       builder: (context, localeProvider, _) {
-        final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+        final isArabic = localeProvider.isArabic;
         return SizedBox(
           height: 70,
           child: Stack(

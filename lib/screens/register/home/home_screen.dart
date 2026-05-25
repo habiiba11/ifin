@@ -93,9 +93,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 3;
 
   final List<String> images = [
-    "https://images.unsplash.com/photo-1521791136064-7986c2920216",
-    "https://images.unsplash.com/photo-1507679799987-c73779587ccf",
-    "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
+   "https://picsum.photos/seed/finance1/800/400",
+  "https://picsum.photos/seed/finance2/800/400",
+  "https://picsum.photos/seed/finance3/800/400",
   ];
 
   @override
