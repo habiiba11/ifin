@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'register/widgets/language_button.dart';
+import 'language_button.dart';
 import 'package:provider/provider.dart';
 import '../../core/locale_provider.dart';
 

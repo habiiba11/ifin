@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifin_ui_flutter/screens/profile/screens/basic_info_screen.dart';
+import 'basic_info_screen.dart';
 
 class PhoneVerificationScreen extends StatefulWidget {
   const PhoneVerificationScreen({super.key});
@@ -77,6 +77,7 @@ class _PhoneVerificationScreenState extends State<PhoneVerificationScreen> {
   Widget build(BuildContext context) {
     final isArabic = Localizations.localeOf(context).languageCode == 'ar';
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xFFF1F3F6),
       body: GestureDetector(
         behavior: HitTestBehavior.translucent,

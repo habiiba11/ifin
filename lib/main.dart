@@ -3,14 +3,17 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'core/locale_provider.dart';
 import 'screens/register_screen.dart';
-import 'screens/register/home/home_screen.dart';
-import 'screens/register/home/calculator_screen.dart';
-import 'screens/register/home/setting_screen.dart';
-import 'screens/auth/screens/phone_verification_screen.dart';
-import 'screens/profile/screens/basic_info_screen.dart';
-import 'screens/finances/screens/finances_screen.dart';
-import 'screens/notifications/screens/notifications_screen.dart';
-import 'screens/notifications/screens/notifications_1_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/calculator_screen.dart';
+import 'screens/setting_screen.dart';
+import 'screens/phone_verification_screen.dart';
+import 'screens/basic_info_screen.dart';
+import 'screens/finances_screen.dart';
+import 'screens/notifications_screen.dart';
+import 'screens/notifications_1_screen.dart';
+import 'screens/employment_details_screen.dart';
+import 'screens/final_review_screen.dart';
+import 'screens/notifications_v2_screen.dart';
 
 void main() {
   runApp(
@@ -47,6 +50,9 @@ class MyApp extends StatelessWidget {
         '/privacy-security': (context) => const PrivacySecurityScreen(),
         '/calculator': (context) => const CalculatorScreen(),
         '/settings': (context) => const ProfileScreen(),
+        '/employment-details': (context) => const EmploymentDetailsScreen(),
+        '/final-review': (context) => const FinalReviewScreen(),
+        '/notifications-v2': (context) => const NotificationsV2Screen(),
       },
     );
   }
