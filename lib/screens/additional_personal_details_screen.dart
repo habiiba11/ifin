@@ -180,7 +180,7 @@ class _AdditionalPersonalDetailsScreenState
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  fixedSize: const Size(double.infinity, 52),
+                 
                 ),
 
                 child: const Text(
