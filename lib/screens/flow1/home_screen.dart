@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'setting_screen.dart';
-import 'package:provider/provider.dart';
-import '../../../core/locale_provider.dart';
-import '../../../core/app_strings.dart';
-import '../../../core/shared_bottom_nav.dart';
+import '../setting_screen.dart';
+import 'package:provider/provider.dart'; 
+import '../../../../core/locale_provider.dart';
+import '../../../../core/app_strings.dart';
+import '../../../../core/shared_bottom_nav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

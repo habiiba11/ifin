@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'language_button.dart';
+import '../language_button.dart';
 import 'package:provider/provider.dart';
-import '../../core/locale_provider.dart';
+import '../../../core/locale_provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'basic_info_screen.dart';
+import '../flow1/basic_info_screen.dart';
 
 class PhoneVerificationScreen extends StatefulWidget {
   const PhoneVerificationScreen({super.key});

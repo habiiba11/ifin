@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/shared_bottom_nav.dart';
+import '../../../../core/shared_bottom_nav.dart';
 
 class BasicInfoScreen extends StatefulWidget {
   const BasicInfoScreen({super.key});
@@ -66,7 +66,11 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                           shape: BoxShape.circle,
                           color: Colors.grey[300],
                         ),
-                        child: const Icon(Icons.person, size: 50, color: Colors.white),
+                        child: const Icon(
+                          Icons.person,
+                          size: 50,
+                          color: Colors.white,
+                        ),
                       ),
                       Positioned(
                         bottom: 0,
@@ -79,7 +83,11 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.grey[300]!),
                           ),
-                          child: const Icon(Icons.camera_alt, size: 14, color: Color(0xFF2D3453)),
+                          child: const Icon(
+                            Icons.camera_alt,
+                            size: 14,
+                            color: Color(0xFF2D3453),
+                          ),
                         ),
                       ),
                     ],
@@ -87,7 +95,11 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                 ),
                 const SizedBox(height: 24),
                 _buildField(Icons.person_outline, _nameController),
-                _buildField(Icons.phone_outlined, _phoneController, editable: false),
+                _buildField(
+                  Icons.phone_outlined,
+                  _phoneController,
+                  editable: false,
+                ),
                 _buildField(Icons.location_on_outlined, _locationController),
                 _buildField(Icons.email_outlined, _emailController),
                 _buildField(Icons.people_outline, _genderController),
@@ -96,7 +108,8 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                   width: double.infinity,
                   height: 52,
                   child: ElevatedButton(
-                    onPressed: () => Navigator.pushNamed(context, '/notifications'),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, '/notifications'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF366F8C),
                       shape: RoundedRectangleBorder(
@@ -123,7 +136,11 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
     );
   }
 
-  Widget _buildField(IconData icon, TextEditingController controller, {bool editable = true}) {
+  Widget _buildField(
+    IconData icon,
+    TextEditingController controller, {
+    bool editable = true,
+  }) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),

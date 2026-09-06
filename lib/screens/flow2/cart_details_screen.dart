@@ -129,7 +129,7 @@ class _CartDetailsScreenState extends State<CartDetailsScreen> {
                 height: 52,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/down-payment');
+                    Navigator.pushNamed(context, '/confirmation');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF366F8C),

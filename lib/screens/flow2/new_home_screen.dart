@@ -10,10 +10,11 @@ class NewHomeScreen extends StatefulWidget {
 
 class NewHomeCategoryCard extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String icon;
   final VoidCallback? onTap;
+  final double circleSize = 48.w;
 
-  const NewHomeCategoryCard({
+  NewHomeCategoryCard({
     super.key,
     required this.title,
     required this.icon,
@@ -28,20 +29,29 @@ class NewHomeCategoryCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 56,
-            height: 56,
+            width: circleSize,
+            height: circleSize,
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 240, 242, 244),
               shape: BoxShape.circle,
             ),
-            child: Icon(
+            child: Image.asset(
               icon,
-              size: 26,
-              color: const Color.fromARGB(255, 15, 72, 120),
+              width: circleSize * 2,
+              height: circleSize * 20,
+              fit: BoxFit.contain,
             ),
           ),
           const SizedBox(height: 6),
-          Text(title, style: const TextStyle(fontSize: 12)),
+          Text(
+            title,
+
+            style: const TextStyle(
+              fontSize: 16,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.normal,
+            ),
+          ),
         ],
       ),
     );
@@ -54,17 +64,14 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   final List<Map<String, String>> banners = [
     {
-      'title': 'Financing is easier\nwith iFin',
-      'image': 'https://picsum.photos/seed/banner1/800/400',
+      'title': 'Financing is easier\nwith ',
+      'image': 'assets/images/newhome1.png',
     },
     {
       'title': 'Get your finance\nin minutes',
-      'image': 'https://picsum.photos/seed/banner2/800/400',
+      'image': 'assets/images/newhome1.png',
     },
-    {
-      'title': 'Trusted\npartners',
-      'image': 'https://picsum.photos/seed/banner3/800/400',
-    },
+    {'title': 'Trusted\npartners', 'image': 'assets/images/newhome1.png'},
   ];
 
   @override
@@ -86,17 +93,23 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
               break;
           }
         },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
+            icon: Image.asset("assets/icons/home.png"),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/icons/finances.png"),
             label: 'Finances',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calculate),
+            icon: Image.asset("assets/icons/calculator.png"),
             label: 'Calculator',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/icons/setting.png"),
+            label: 'Setting',
+          ),
         ],
       ),
       body: SafeArea(
@@ -106,21 +119,18 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
             final bool isTablet = width >= 600 && width < 1024;
             final bool isDesktop = width >= 1024;
 
-            // نحدد عدد أعمدة الـ Partners grid حسب حجم الشاشة
             final int gridCrossAxisCount = isDesktop
                 ? 6
                 : isTablet
                 ? 4
                 : 3;
 
-            // ارتفاع البانر بيكبر شوية في الشاشات الكبيرة
             final double bannerHeight = isDesktop
                 ? 320
                 : isTablet
                 ? 260
                 : 200;
 
-            // نحدد عرض أقصى للمحتوى عشان ميتمططش لأقصى الشاشة في الويب
             final double maxContentWidth = isDesktop ? 1000 : double.infinity;
 
             return Center(
@@ -151,11 +161,9 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                 ),
                                 child: Stack(
                                   children: [
-                                    const Center(
-                                      child: Icon(
-                                        Icons.notifications_none,
-                                        size: 20,
-                                        color: Colors.black87,
+                                    Center(
+                                      child: Image.asset(
+                                        "assets/icons/notification.png",
                                       ),
                                     ),
                                     Align(
@@ -165,15 +173,10 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                           top: 6.h,
                                           right: 6.w,
                                         ),
-                                        width: 8.w,
-                                        height: 8.h,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xFFDF373C),
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            color: Colors.white,
-                                            width: 1.5,
-                                          ),
+                                        width: 16.w,
+                                        height: 16.h,
+                                        child: Image.asset(
+                                          "assets/icons/redCircle.png",
                                         ),
                                       ),
                                     ),
@@ -216,24 +219,11 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                 borderRadius: BorderRadius.circular(18),
                                 child: Stack(
                                   children: [
-                                    Image.network(
+                                    Image.asset(
                                       banner['image']!,
                                       height: bannerHeight,
                                       width: double.infinity,
                                       fit: BoxFit.cover,
-                                      loadingBuilder:
-                                          (context, child, progress) {
-                                            if (progress == null) return child;
-                                            return Container(
-                                              height: bannerHeight,
-                                              width: double.infinity,
-                                              color: Colors.grey.shade200,
-                                              child: const Center(
-                                                child:
-                                                    CircularProgressIndicator(),
-                                              ),
-                                            );
-                                          },
                                       errorBuilder:
                                           (context, error, stackTrace) {
                                             return Container(
@@ -248,6 +238,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                             );
                                           },
                                     ),
+
                                     Container(
                                       height: bannerHeight,
                                       width: double.infinity,
@@ -331,40 +322,28 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                 children: [
                                   NewHomeCategoryCard(
                                     title: 'Banks',
-                                    icon: Icons.account_balance,
+                                    icon: "assets/icons/Bank.png",
                                     onTap: () {},
                                   ),
                                   NewHomeCategoryCard(
                                     title: 'Market',
-                                    icon: Icons.shopping_cart,
-                                    onTap: () => Navigator.pushNamed(
-                                      context,
-                                      '/cart-details',
-                                    ),
+                                    icon: 'assets/icons/markett.png',
+                                    onTap: () {},
                                   ),
                                   NewHomeCategoryCard(
                                     title: 'Cars',
-                                    icon: Icons.directions_car,
-                                    onTap: () => Navigator.pushNamed(
-                                      context,
-                                      '/cart-details',
-                                    ),
+                                    icon: 'assets/icons/cars.png',
+                                    onTap: () {},
                                   ),
                                   NewHomeCategoryCard(
                                     title: 'Electronics',
-                                    icon: Icons.devices,
-                                    onTap: () => Navigator.pushNamed(
-                                      context,
-                                      '/cart-details',
-                                    ),
+                                    icon: 'assets/icons/electronics.png',
+                                    onTap: () {},
                                   ),
                                   NewHomeCategoryCard(
                                     title: 'Furniture',
-                                    icon: Icons.chair,
-                                    onTap: () => Navigator.pushNamed(
-                                      context,
-                                      '/cart-details',
-                                    ),
+                                    icon: 'assets/icons/furniture.png',
+                                    onTap: () {},
                                   ),
                                 ],
                               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/shared_bottom_nav.dart';
+import '../../../../core/shared_bottom_nav.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({super.key});

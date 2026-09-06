@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/shared_bottom_nav.dart';
+import '../../../../core/shared_bottom_nav.dart';
 
 class PrivacySecurityScreen extends StatefulWidget {
   const PrivacySecurityScreen({super.key});

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'screens/new_home_screen.dart';
+import 'screens/flow2/new_home_screen.dart';
 import 'screens/notifications_v2_screen.dart';
-import 'screens/cart_details_screen.dart';
-import 'screens/down_payment_screen.dart';
-import 'screens/phone_verification_screen.dart';
+import 'screens/flow2/cart_details_screen.dart';
+import 'screens/flow2/down_payment_screen.dart';
+import 'screens/sharedScreens/phone_verification_screen.dart';
 import 'screens/employment_details_screen.dart';
-import 'screens/additional_personal_details_screen.dart';
-import 'screens/final_review_screen.dart';
-import 'screens/congratulations_screen.dart';
+import 'screens/flow1/additional_personal_details_screen.dart';
+import 'screens/flow2/selectProducts.dart';
+import 'screens/flow2/congratulations_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'screens/flow2/confirmation_screen.dart';
 
 void main() {
   runApp(const MyApp2());
@@ -33,7 +34,7 @@ class MyApp2 extends StatelessWidget {
             '/cart-details': (context) => const CartDetailsScreen(),
             '/down-payment': (context) => const DownPaymentScreen(),
             '/phone-verification': (context) => const PhoneVerificationScreen(),
-
+            '/confirmation': (context) => const ConfirmationScreen(),
             '/employment-details': (context) => const EmploymentDetailsScreen(),
             '/additional-personal-details': (context) =>
                 const AdditionalPersonalDetailsScreen(),
